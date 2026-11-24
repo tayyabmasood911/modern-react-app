@@ -1,128 +1,101 @@
-# :rocket: Modern React App
+# Modern React 18 Enterprise Operations Dashboard
 
-<div align="center">
+[![CI/CD Pipeline](https://github.com/tayyabmasood911/modern-react-app/actions/workflows/ci.yml/badge.svg)](https://github.com/tayyabmasood911/modern-react-app/actions)
+[![Security Policy](https://img.shields.io/badge/Security-Policy-blue.svg)](SECURITY.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![React](https://img.shields.io/badge/React-v18.3-blue.svg)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-v5.2-blueviolet.svg)](https://vitejs.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v3.4-38bdf8.svg)](https://tailwindcss.com)
 
-[![Status](https://img.shields.io/badge/status-production--ready-brightgreen?style=for-the-badge&logo=git)]()
-[![Domain](https://img.shields.io/badge/domain-Software--Engineering-blueviolet?style=for-the-badge)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge&logo=github)](https://github.com/T9113/modern-react-app/pulls)
-[![Security Hardened](https://img.shields.io/badge/security-hardened-red?style=for-the-badge&logo=shield)]()
-
-</div>
-
----
-
-## :memo: Executive Summary
-
-**Modern React App** is an enterprise-grade production engineering implementation designed for mission-critical deployments. Built to meet stringent requirements for **99.99% availability**, zero-trust security boundaries, automated resilience, and seamless CI/CD delivery.
-
-Key operational outcomes:
-- **Resilience:** Multi-zone high availability with automated fault detection and recovery.
-- **Scalability:** Elastic horizontal scaling responsive to real-time workload demand.
-- **Security:** Strict adherence to least-privilege RBAC, encrypted communications, and zero committed secrets.
-- **Maintainability:** Modular, declarative configuration aligned with cloud-native industry standards.
+A production-grade, modular cloud operations and DevSecOps management console built with React 18, Vite 5, TypeScript 5, and Tailwind CSS. Packaged in a hardened multi-stage Docker container served by an unprivileged Nginx reverse proxy with OWASP security headers.
 
 ---
 
-## :building_construction: System Architecture
+## Architectural Blueprint
 
-```text
-+-------------------------------------------------------------------------------+
-|                       Modern React App Architecture Blueprint                    |
-|                                                                               |
-|   [Client Ingress] ===> [API Gateway / Traffic Router (TLS 1.3 / mTLS)]       |
-|                                     |                                         |
-|                                     v                                         |
-|                         [Core Workload Cluster]                               |
-|                         (Multi-Replica / Multi-AZ)                            |
-|                                     |                                         |
-|                 +-------------------+-------------------+                     |
-|                 |                                       |                     |
-|                 v                                       v                     |
-|     [Persistence & Storage Layer]           [Observability & Telemetry Engine]|
-|      (Encrypted at Rest / KMS)              (Prometheus / OTLP / OpenSearch)  |
-+-------------------------------------------------------------------------------+
-```
+The application employs a lightning-fast Vite build system coupled with an unprivileged Alpine Nginx container runtime implementing single-page application (SPA) routing, active gzip compression, and strict security headers:
+
+![Modern React App Architecture](docs/architecture.svg)
 
 ---
 
-## :sparkles: Key Enterprise Capabilities
+## Key Capabilities & Tech Stack
 
-- :zap: **High Availability & Fault Tolerance:** Eliminates single points of failure via multi-node redundancy and health check probes.
-- :shield: **Zero-Trust Security Posture:** Enforces non-root runtime environments, ephemeral credentials, and automated vulnerability scanning.
-- :chart_with_upwards_trend: **Elastic Autoscaling:** Dynamic resource provisioning based on custom throughput, memory pressure, and queue depth.
-- :mag: **Full-Stack Observability:** Standardized structured telemetry, metrics instrumentation, and distributed request tracing.
-- :package: **GitOps & CI/CD Automation:** Infrastructure and configuration managed declaratively with automated testing and continuous deployment.
-
----
-
-## :file_folder: Repository Directory Structure
-
-```text
-.
-|-- config/              # Declarative configuration and environment definitions
-|-- src/                 # Production source code and manifests
-|-- scripts/             # Operational automation, setup, and maintenance scripts
-|-- tests/               # Comprehensive validation and unit test suites
-|-- LICENSE              # MIT Open Source License
-`-- README.md            # Enterprise architectural documentation
-```
+- **React 18.3 & TypeScript 5:** Strict type safety, clean component hierarchy, and responsive UI components.
+- **Tailwind CSS 3.4 & Lucide Icons:** Modern utility-first styling with customized enterprise color tokens and iconography.
+- **Multi-Stage Containerization:** `node:20-alpine` compilation stage with dependency layer caching, producing a minimal static output served by `nginx:1.27-alpine-slim`.
+- **Hardened Nginx Reverse Proxy:** Unprivileged runtime execution (`USER nginx`, port 8080), single-page application fallback routing (`try_files $uri $uri/ /index.html`), gzip compression, and `/healthz` liveness probes.
+- **Enterprise Security Headers:** Active CSP, `X-Frame-Options DENY`, `X-Content-Type-Options nosniff`, and `Referrer-Policy strict-origin-when-cross-origin`.
 
 ---
 
-## :zap: Quick Start & Deployment
+## Quick Start & Local Development
 
 ### Prerequisites
-- Git `>= 2.40`
-- Docker Engine `>= 24.0` / Cloud CLI (AWS / GCP / Azure / Kubernetes)
+- Node.js 20.x or higher
+- npm 10.x or higher
 
-### Deployment Steps
+### Local Development
 ```bash
-# 1. Clone the repository
-git clone https://github.com/T9113/modern-react-app.git
+# Clone the repository
+git clone https://github.com/tayyabmasood911/modern-react-app.git
 cd modern-react-app
 
-# 2. Inspect and configure environment parameters
-cp config/example.env config/.env
+# Install dependencies
+npm install
 
-# 3. Validate configurations and syntax
-# Run linters, dry-run validations, or unit test suites
+# Start local Vite development server with Hot Module Replacement (HMR)
+npm run dev
+# -> Local server available at http://localhost:3000
+```
 
-# 4. Deploy workloads / infrastructure
-# Execute deployment manifests or container runtime
+### Production Build & Preview
+```bash
+# Type check and build static bundle
+npm run build
+
+# Preview production build locally
+npm run preview
 ```
 
 ---
 
-## :gear: Configuration Reference
+## Docker & Container Deployment
 
-| Parameter | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `ENVIRONMENT` | string | `production` | Deployment environment target (`staging`, `production`) |
-| `LOG_LEVEL` | string | `info` | Structured logging verbosity (`debug`, `info`, `warn`, `error`) |
-| `METRICS_ENABLED` | boolean | `true` | Enables real-time Prometheus / OpenTelemetry telemetry export |
-| `TLS_MIN_VERSION` | string | `TLSv1.3` | Minimum allowable TLS protocol version for network traffic |
+### 1. Build Multi-Stage Production Container
+```bash
+docker build -t modern-react-app:latest .
+```
 
----
+### 2. Run Container Locally
+```bash
+docker run -d -p 8080:8080 --name react-dashboard modern-react-app:latest
 
-## :lock: Security, Compliance & Governance
-
-1. **Least-Privilege Execution:** Services run under restricted service accounts with zero root permissions.
-2. **Encrypted Data In-Flight & At-Rest:** AES-256 / KMS envelope encryption for persistent state and TLS 1.3 for network transport.
-3. **Automated Supply Chain Security:** All dependencies and container images verified against CVE databases using Trivy and Semgrep.
-4. **Zero-Secret Guarantee:** No hardcoded tokens, passwords, or private keys exist in this codebase.
+# Verify healthcheck endpoint
+curl http://localhost:8080/healthz
+# -> Returns: OK
+```
 
 ---
 
-## :bust_in_silhouette: Author & Maintainer
+## Local Verification & Testing
 
-**Tayyab Masood**  
-Cloud Solutions Architect & Senior DevOps Engineer  
-- :globe_with_meridians: **GitHub:** [@T9113](https://github.com/T9113)  
-- :scroll: **Certification:** AWS Certified Solutions Architect - Associate  
+```bash
+# Execute Python unit test suite
+python3 -m unittest discover -s tests -p "test_*.py"
+
+# Typecheck code
+npx tsc --noEmit
+```
 
 ---
 
-## :page_facing_up: License
+## Security Governance & Disclosure
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+For vulnerability reports or security disclosures, review our [Responsible Disclosure Policy](SECURITY.md) or email maintainer **Tayyab Masood** at [tayyabmasood911@gmail.com](mailto:tayyabmasood911@gmail.com).
+
+---
+
+## License
+
+Licensed under the MIT License. See [LICENSE](LICENSE) for details.

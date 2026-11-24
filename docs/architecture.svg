@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <filter id="softShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.05"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284c7"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="680" fill="#ffffff"/>
+
+  <!-- Top Title Bar -->
+  <rect x="40" y="24" width="1120" height="64" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" filter="url(#softShadow)"/>
+  <circle cx="72" cy="56" r="14" fill="#61dafb" opacity="0.25"/>
+  <path d="M 64 56 C 64 52 80 52 80 56 C 80 60 64 60 64 56 Z" fill="none" stroke="#0284c7" stroke-width="1.8"/>
+  <text x="96" y="62" fill="#0f172a" font-size="20" font-weight="700" letter-spacing="-0.3">Enterprise Modern React 18 + Vite + TypeScript + Tailwind CSS Architecture</text>
+  
+  <rect x="880" y="42" width="125" height="28" rx="14" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
+  <text x="898" y="60" fill="#15803d" font-size="11" font-weight="700">REACT 18.3</text>
+  <rect x="1015" y="42" width="125" height="28" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1032" y="60" fill="#1d4ed8" font-size="11" font-weight="700">VITE 5 + TS</text>
+
+  <!-- COLUMN 1: Source & Modular Architecture -->
+  <rect x="40" y="112" width="250" height="520" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#softShadow)"/>
+  <path d="M 40 122 A 10 10 0 0 1 50 112 L 280 112 A 10 10 0 0 1 290 122 L 290 156 L 40 156 Z" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="56" y="141" fill="#0f172a" font-size="13" font-weight="700">1. COMPONENT ARCHITECTURE</text>
+
+  <rect x="56" y="174" width="218" height="96" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="70" y="200" fill="#0f172a" font-size="13" font-weight="700">React 18 &amp; TypeScript</text>
+  <text x="70" y="222" fill="#64748b" font-size="11">Strict Typing (TS 5.4+)</text>
+  <rect x="70" y="236" width="120" height="20" rx="4" fill="#e0f2fe"/>
+  <text x="78" y="250" fill="#0369a1" font-size="10" font-weight="600">src/App.tsx</text>
+
+  <rect x="56" y="286" width="218" height="96" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="70" y="312" fill="#0f172a" font-size="13" font-weight="700">Tailwind CSS 3.4</text>
+  <text x="70" y="334" fill="#64748b" font-size="11">Utility-First Design Tokens</text>
+  <rect x="70" y="348" width="130" height="20" rx="4" fill="#f0fdf4"/>
+  <text x="78" y="362" fill="#15803d" font-size="10" font-weight="600">JIT Engine Purging</text>
+
+  <rect x="56" y="398" width="218" height="96" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="70" y="424" fill="#0f172a" font-size="13" font-weight="700">Modular Component Tree</text>
+  <text x="70" y="446" fill="#64748b" font-size="11">MetricsCards, PipelineTable</text>
+  <rect x="70" y="460" width="130" height="20" rx="4" fill="#fef3c7"/>
+  <text x="78" y="474" fill="#b45309" font-size="10" font-weight="600">Lucide React Icons</text>
+
+  <rect x="56" y="510" width="218" height="96" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="70" y="536" fill="#0f172a" font-size="13" font-weight="700">Local Dev Server</text>
+  <text x="70" y="558" fill="#64748b" font-size="11">Vite Lightning-fast HMR</text>
+  <text x="70" y="578" fill="#0284c7" font-size="10" font-weight="600">http://localhost:3000</text>
+
+  <!-- Flow Arrow 1 to 2 -->
+  <line x1="290" y1="372" x2="330" y2="372" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- COLUMN 2: Multi-Stage Docker Builder -->
+  <rect x="330" y="112" width="260" height="520" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#softShadow)"/>
+  <path d="M 330 122 A 10 10 0 0 1 340 112 L 580 112 A 10 10 0 0 1 590 122 L 590 156 L 330 156 Z" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="348" y="141" fill="#0f172a" font-size="13" font-weight="700">2. DOCKER BUILD ENGINE</text>
+
+  <rect x="348" y="174" width="224" height="135" rx="8" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1"/>
+  <text x="362" y="200" fill="#0369a1" font-size="14" font-weight="700">Stage 1: Node:20-alpine</text>
+  <text x="362" y="222" fill="#0f172a" font-size="11">Compilation &amp; Tree Shaking</text>
+  <text x="362" y="240" fill="#64748b" font-size="11">• Layer-cached npm ci</text>
+  <text x="362" y="258" fill="#64748b" font-size="11">• Rollup production bundling</text>
+  <text x="362" y="276" fill="#64748b" font-size="11">• Produces optimized /app/dist</text>
+  <rect x="362" y="284" width="135" height="16" rx="3" fill="#0284c7"/>
+  <text x="368" y="295" fill="#ffffff" font-size="9" font-weight="700">ZERO RUNTIME BLOAT</text>
+
+  <rect x="348" y="325" width="224" height="135" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="362" y="351" fill="#0f172a" font-size="13" font-weight="700">Asset Optimization</text>
+  <text x="362" y="373" fill="#64748b" font-size="11">Code-splitting chunks</text>
+  <text x="362" y="393" fill="#475569" font-size="11">• vendor chunk (react, react-dom)</text>
+  <text x="362" y="411" fill="#475569" font-size="11">• icons chunk (lucide-react)</text>
+  <rect x="362" y="426" width="140" height="20" rx="4" fill="#dcfce7"/>
+  <text x="370" y="440" fill="#15803d" font-size="10" font-weight="600">Sub-100KB Gzip Payload</text>
+
+  <rect x="348" y="476" width="224" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="362" y="502" fill="#0f172a" font-size="13" font-weight="700">Stage 2: Nginx Runner</text>
+  <text x="362" y="524" fill="#64748b" font-size="11">nginx:1.27-alpine-slim</text>
+  <text x="362" y="544" fill="#475569" font-size="11">• Unprivileged user 'nginx'</text>
+  <text x="362" y="564" fill="#475569" font-size="11">• Listens on unprivileged 8080</text>
+  <text x="362" y="586" fill="#0284c7" font-size="10" font-weight="600">Hardened Minimal Base</text>
+
+  <!-- Flow Arrow 2 to 3 -->
+  <line x1="590" y1="372" x2="630" y2="372" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- COLUMN 3: Hardened Nginx Web Server -->
+  <rect x="630" y="112" width="250" height="520" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#softShadow)"/>
+  <path d="M 630 122 A 10 10 0 0 1 640 112 L 870 112 A 10 10 0 0 1 880 122 L 880 156 L 630 156 Z" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="646" y="141" fill="#0f172a" font-size="13" font-weight="700">3. NGINX REVERSE PROXY</text>
+
+  <rect x="646" y="174" width="218" height="135" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="660" y="200" fill="#0f172a" font-size="13" font-weight="700">Security Headers Core</text>
+  <text x="660" y="222" fill="#dc2626" font-size="10" font-weight="600">• X-Frame-Options: DENY</text>
+  <text x="660" y="240" fill="#dc2626" font-size="10" font-weight="600">• X-Content-Type-Options: nosniff</text>
+  <text x="660" y="258" fill="#15803d" font-size="10" font-weight="600">• Strict Content-Security-Policy</text>
+  <text x="660" y="276" fill="#475569" font-size="10">• Referrer-Policy: strict-origin</text>
+  <rect x="660" y="284" width="135" height="16" rx="3" fill="#15803d"/>
+  <text x="666" y="295" fill="#ffffff" font-size="9" font-weight="700">OWASP COMPLIANT</text>
+
+  <rect x="646" y="325" width="218" height="135" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="660" y="351" fill="#0f172a" font-size="13" font-weight="700">SPA Client Routing</text>
+  <text x="660" y="373" fill="#64748b" font-size="11">try_files $uri $uri/ /index.html</text>
+  <text x="660" y="391" fill="#475569" font-size="11">• HTML5 History API fallback</text>
+  <text x="660" y="409" fill="#475569" font-size="11">• Eliminates 404 on deep links</text>
+  <rect x="660" y="426" width="140" height="20" rx="4" fill="#dcfce7"/>
+  <text x="670" y="440" fill="#15803d" font-size="10" font-weight="600">Seamless Navigation</text>
+
+  <rect x="646" y="476" width="218" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="660" y="502" fill="#0f172a" font-size="13" font-weight="700">Gzip &amp; Health Probes</text>
+  <text x="660" y="524" fill="#64748b" font-size="11">Active Compression</text>
+  <text x="660" y="544" fill="#475569" font-size="11">• Gzip on all static MIME types</text>
+  <text x="660" y="564" fill="#475569" font-size="11">• /healthz liveness probe endpoint</text>
+  <text x="660" y="586" fill="#0284c7" font-size="10" font-weight="600">Kubernetes Ready</text>
+
+  <!-- Flow Arrow 3 to 4 -->
+  <line x1="880" y1="372" x2="920" y2="372" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- COLUMN 4: Deployment & CI/CD Pipeline -->
+  <rect x="920" y="112" width="240" height="520" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#softShadow)"/>
+  <path d="M 920 122 A 10 10 0 0 1 930 112 L 1150 112 A 10 10 0 0 1 1160 122 L 1160 156 L 920 156 Z" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="936" y="141" fill="#0f172a" font-size="13" font-weight="700">4. CI/CD &amp; RUNTIME</text>
+
+  <rect x="936" y="174" width="208" height="110" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="950" y="200" fill="#0f172a" font-size="13" font-weight="700">GitHub Actions CI</text>
+  <text x="950" y="222" fill="#64748b" font-size="11">.github/workflows/ci.yml</text>
+  <text x="950" y="242" fill="#475569" font-size="11">• TypeCheck (tsc --noEmit)</text>
+  <text x="950" y="258" fill="#475569" font-size="11">• Docker Build &amp; Trivy Scan</text>
+  <text x="950" y="272" fill="#15803d" font-size="10" font-weight="600">Automated Verification</text>
+
+  <rect x="936" y="300" width="208" height="100" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="950" y="326" fill="#0f172a" font-size="13" font-weight="700">Container Security</text>
+  <text x="950" y="348" fill="#64748b" font-size="11">Trivy Vulnerability Audit</text>
+  <text x="950" y="368" fill="#dc2626" font-size="11" font-weight="600">Zero Critical Vulnerabilities</text>
+  <text x="950" y="384" fill="#475569" font-size="10">Non-root user execution</text>
+
+  <rect x="936" y="416" width="208" height="96" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="950" y="442" fill="#0f172a" font-size="13" font-weight="700">Production Runtime</text>
+  <text x="950" y="464" fill="#64748b" font-size="11">High Availability Hosting</text>
+  <text x="950" y="484" fill="#475569" font-size="11">Docker, K8s, AWS ECS/EKS</text>
+  <text x="950" y="498" fill="#0284c7" font-size="10" font-weight="600">Port 8080 Unprivileged</text>
+
+  <rect x="936" y="528" width="208" height="78" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="950" y="554" fill="#0f172a" font-size="13" font-weight="700">Enterprise Standard</text>
+  <text x="950" y="576" fill="#15803d" font-size="11" font-weight="600">React 18 SPA Architecture</text>
+  <text x="950" y="592" fill="#64748b" font-size="10">Zero-drift frontend</text>
+</svg>
